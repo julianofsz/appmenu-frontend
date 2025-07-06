@@ -1,23 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 export default defineConfig({
-  plugins: [tailwindcss(),react()],
+  plugins: [tailwindcss(), react()],
   appType: 'spa',
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
- server: {
+  server: {
     host: true, // Permite que o servidor seja acessado pela rede
-    
+
     //SEÇÃO PARA PERMITIR O NGROK
     allowedHosts: [
-      // Adiciona o domínio principal do ngrok à lista de permissões
-      '.ngrok-free.app' 
-    ]
+      // Adiciona o domínio principal do ngrok à lista de permissões.
+      '.ngrok-free.app',
+    ],
   },
-})
+});
